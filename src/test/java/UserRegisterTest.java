@@ -1,4 +1,5 @@
 import com.opencart.navigation.Navigation;
+import com.opencart.steps.ExamplePageBL;
 import com.opencart.steps.MainPageBL;
 import com.opencart.steps.RegisterPageBL;
 import org.testng.annotations.Test;
@@ -16,4 +17,6 @@ public class UserRegisterTest extends BaseTest {
                 .registerNewPerson();
         registerPageBL.verifyUserRegistration();
     }
+
+
 }

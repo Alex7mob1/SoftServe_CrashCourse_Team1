@@ -19,4 +19,19 @@ public class HeaderPageBL {
         headerPage.getRegisterButton().click();
         return new RegisterPageBL();
     }
+
+    public HeaderPageBL clickOnCurrencyButton() {
+        headerPage.getCurrencyButton().click();
+        return this;
+    }
+
+    public HeaderPageBL clickOnPoundCurrencyButton() {
+        headerPage.getPoundCurrencyButton().click();
+        return this;
+    }
+
+    public ExamplePageBL clickOnExamplePage(){
+        headerPage.getTestProductButton().click();
+        return new ExamplePageBL();
+    }
 }

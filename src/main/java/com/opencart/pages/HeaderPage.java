@@ -12,6 +12,21 @@ public class HeaderPage extends BasePage {
     @FindBy(xpath = ".//*[contains(@href, 'register')]")
     private WebElement registerButton;
 
+    @FindBy(xpath = "//*[@class='btn btn-link dropdown-toggle']")
+    private WebElement currencyButton;
+
+
+    @FindBy(name = "dWs")
+    private WebElement poundCurrencyButton;
+
+    @FindBy(xpath = ".//*[@title='MacBook']")
+    private WebElement testProductButton;
+
+    public WebElement getTestProductButton() {
+        wait.until(ExpectedConditions.visibilityOf(testProductButton));
+        return testProductButton;
+    }
+
     public WebElement getMyAccountButton() {
         wait.until(ExpectedConditions.visibilityOf(myAccountButton));
         return myAccountButton;
@@ -20,4 +35,15 @@ public class HeaderPage extends BasePage {
     public WebElement getRegisterButton() {
         return registerButton;
     }
+
+    public WebElement getCurrencyButton() {
+        wait.until(ExpectedConditions.visibilityOf(currencyButton));
+        return currencyButton;
+    }
+
+    public WebElement getPoundCurrencyButton() {
+        return poundCurrencyButton;
+    }
+
+
 }
