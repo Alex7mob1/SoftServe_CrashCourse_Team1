@@ -12,6 +12,12 @@ public class HeaderPage extends BasePage {
     @FindBy(xpath = ".//*[contains(@href, 'register')]")
     private WebElement registerButton;
 
+    @FindBy(xpath = ".//*[contains(@href, 'login')]")
+    private WebElement loginPageButton;
+
+    public HeaderPage() {
+    }
+
     public WebElement getMyAccountButton() {
         wait.until(ExpectedConditions.visibilityOf(myAccountButton));
         return myAccountButton;
@@ -20,4 +26,9 @@ public class HeaderPage extends BasePage {
     public WebElement getRegisterButton() {
         return registerButton;
     }
+
+    public WebElement getLoginPageButton() {
+        return loginPageButton;
+    }
+
 }

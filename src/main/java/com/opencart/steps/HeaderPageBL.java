@@ -1,12 +1,15 @@
 package com.opencart.steps;
 
 import com.opencart.pages.HeaderPage;
+import com.opencart.pages.MyAccountPage;
+import org.openqa.selenium.WebElement;
 
 public class HeaderPageBL {
 
     private HeaderPage headerPage;
 
     public HeaderPageBL() {
+
         headerPage = new HeaderPage();
     }
 
@@ -19,4 +22,12 @@ public class HeaderPageBL {
         headerPage.getRegisterButton().click();
         return new RegisterPageBL();
     }
+    public LoginPageBL clickOnLoginPageButton() {
+        headerPage.getLoginPageButton().click();
+        return new LoginPageBL();}
 }
+
+
+
+
+

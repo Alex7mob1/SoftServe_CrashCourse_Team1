@@ -26,7 +26,7 @@ public class RegisterPage extends BasePage {
     @FindBy(name = "agree")
     private WebElement policy;
 
-    @FindBy(xpath = ".//*[@type='submit']")
+    @FindBy(xpath = ".//*[@type = 'submit']")
     private WebElement continueButton;
 
     public WebElement getFirstNameInput() {
@@ -60,4 +60,5 @@ public class RegisterPage extends BasePage {
     public WebElement getContinueButton() {
         return continueButton;
     }
+
 }

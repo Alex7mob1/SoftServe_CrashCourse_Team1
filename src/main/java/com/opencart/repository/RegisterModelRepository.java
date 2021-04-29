@@ -3,12 +3,12 @@ package com.opencart.repository;
 import com.opencart.datamodel.RegisterModel;
 import org.apache.commons.lang3.RandomStringUtils;
 
+
 public class RegisterModelRepository {
+    private RegisterModelRepository(){
 
-    private RegisterModelRepository() {
     }
-
-    public static RegisterModel getRegisterModel() {
+public static RegisterModel getRegisterModel(){
         return RegisterModel.getBuilder()
                 .firstName(RandomStringUtils.randomAlphabetic(5))
                 .lastName(RandomStringUtils.randomAlphabetic(5))
@@ -16,5 +16,5 @@ public class RegisterModelRepository {
                 .telephone(RandomStringUtils.randomAlphabetic(5))
                 .password(RandomStringUtils.randomAlphabetic(7))
                 .build();
-    }
+}
 }
