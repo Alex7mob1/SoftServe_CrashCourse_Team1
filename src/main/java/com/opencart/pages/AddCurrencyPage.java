@@ -27,8 +27,6 @@ public class AddCurrencyPage extends BasePage{
     @FindBy(xpath = ".//*[@type='submit']")
     private WebElement submitButton;
 
-
-
     public WebElement getTitleInput() {
         wait.until(ExpectedConditions.visibilityOf(titleInput));
         return titleInput;

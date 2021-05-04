@@ -14,7 +14,4 @@ public class SuccessAddCurrencyPage extends BasePage{
         return successModifyTitle;
     }
 
-
-
-
 }

@@ -21,5 +21,4 @@ public class CurrencyPageBL {
         return new EditCurrencyPageBL();
     }
 
-
 }

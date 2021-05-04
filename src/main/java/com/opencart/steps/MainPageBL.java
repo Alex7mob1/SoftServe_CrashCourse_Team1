@@ -8,5 +8,4 @@ public class MainPageBL {
         return new HeaderPageBL();
     }
 
-
 }

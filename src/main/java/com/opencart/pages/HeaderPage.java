@@ -15,8 +15,7 @@ public class HeaderPage extends BasePage {
     @FindBy(xpath = "//*[@class='btn btn-link dropdown-toggle']")
     private WebElement currencyButton;
 
-
-    @FindBy(name = "dWs")
+    @FindBy(name = "GBR")
     private WebElement poundCurrencyButton;
 
     @FindBy(xpath = ".//*[@title='MacBook']")
@@ -44,6 +43,5 @@ public class HeaderPage extends BasePage {
     public WebElement getPoundCurrencyButton() {
         return poundCurrencyButton;
     }
-
 
 }

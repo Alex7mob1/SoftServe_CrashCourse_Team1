@@ -7,7 +7,7 @@ public class EditCurrencyModelRepository {
 
     public static AddCurrencyModel getEditCurrencyModel(){
         return AddCurrencyModel.getBuilder()
-                .code(RandomStringUtils.randomAlphabetic(3))
+                .code("GBR")
                 .value("24")
                 .build();
     }

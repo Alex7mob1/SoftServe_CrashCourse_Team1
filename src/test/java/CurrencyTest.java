@@ -52,7 +52,7 @@ public class CurrencyTest extends BaseTest {
         CurrencyPageBL currencyPageBL = new CurrencyPageBL();
         currencyPageBL
                 .clickOnAddNewCurrencyButton()
-                .AddNewCurrency()
+                .addNewCurrency()
                 .verifyAddingCurrency();
     }
 
@@ -65,7 +65,7 @@ public class CurrencyTest extends BaseTest {
         CurrencyPageBL currencyPageBL = new CurrencyPageBL();
         currencyPageBL
                 .clickOnAddNewCurrencyButton()
-                .AddNewCurrency()
+                .addNewCurrency()
                 .incorrectVerifyAddingCurrencyExpectedMessege();
     }
 

@@ -13,7 +13,7 @@ public class AddCurrencyPageBL {
 
     public AddCurrencyPageBL(){addCurrencyPage = new AddCurrencyPage(); }
 
-    public AddCurrencyPageBL AddNewCurrency() {
+    public AddCurrencyPageBL addNewCurrency() {
 
         AddCurrencyModel addCurrencyModel = AddCurrencyModelRepository.getAddCurrencyModel();
 
