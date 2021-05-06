@@ -2,7 +2,10 @@ package com.opencart.steps;
 
 public class MainPageBL {
 
-    public HeaderPageBL getHeaderPageBL() {
-        return new HeaderPageBL();
+    public HeaderPanelBL getHeaderPanelBL() {
+        return new HeaderPanelBL();
+    }
+    public MenuPanelBL getMenuPanelBL(){
+        return new MenuPanelBL();
     }
 }

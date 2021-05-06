@@ -4,6 +4,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.concurrent.TimeUnit;
+
 public class DriverRepository {
 
     public static final ThreadLocal<WebDriver> DRIVERS = new ThreadLocal<>();
@@ -18,6 +20,7 @@ public class DriverRepository {
 
     public static void instanceWebBrowser() {
         webDriver = new ChromeDriver();
+        webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         DRIVERS.set(webDriver);
     }
 
