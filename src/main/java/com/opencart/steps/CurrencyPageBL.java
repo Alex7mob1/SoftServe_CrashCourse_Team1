@@ -10,7 +10,6 @@ public class CurrencyPageBL {
 
     public CurrencyPageBL(){currencyPage = new CurrencyPage();}
 
-
     public AddCurrencyPageBL clickOnAddNewCurrencyButton() {
         currencyPage.getAddNewCurrency().click();
         return new AddCurrencyPageBL();

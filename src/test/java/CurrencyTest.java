@@ -1,12 +1,8 @@
 import com.opencart.navigation.Navigation;
-import com.opencart.steps.AdminLoginPageBL;
-import com.opencart.steps.CurrencyPageBL;
-import com.opencart.steps.ExamplePageBL;
-import com.opencart.steps.MainPageBL;
+import com.opencart.steps.*;
 import org.testng.annotations.Test;
 
-import static com.opencart.enums.URLs.ADMIN_CURRENCY_URL;
-import static com.opencart.enums.URLs.BASE_URL;
+import static com.opencart.enums.URLs.*;
 
 public class CurrencyTest extends BaseTest {
 
@@ -95,5 +91,17 @@ public class CurrencyTest extends BaseTest {
                 .verifyInccorectExpectedMessageEditing();
     }
 
+    @Test
+    public void AddNewTaxTest() {
+        new Navigation().navigateToUrl(TAX_RATES_URL.getValue());
+        AdminLoginPageBL adminLoginPageBL = new AdminLoginPageBL();
+        adminLoginPageBL
+                .adminLogin();
+        TaxPageBL taxPageBL = new TaxPageBL();
+        taxPageBL
+                .clickOnAddTaxButton()
+                .addNewTax();
 
+
+    }
 }

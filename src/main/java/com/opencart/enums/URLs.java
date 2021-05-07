@@ -3,8 +3,8 @@ package com.opencart.enums;
 public enum URLs {
 
     BASE_URL("http://localhost/opencart/upload/index.php?route=common/home"),
-    ADMIN_CURRENCY_URL("http://localhost/opencart/upload/admin/index.php?route=localisation/currency&user_token=9JXyzQv7JOvmaw8rP1uKWuGjaQsv0YiU");
-
+    ADMIN_CURRENCY_URL("http://localhost/opencart/upload/admin/index.php?route=localisation/currency&user_token=9JXyzQv7JOvmaw8rP1uKWuGjaQsv0YiU"),
+    TAX_RATES_URL("http://localhost/opencart/upload/admin/index.php?route=localisation/tax_rate&user_token=UcdzwyLoGyOHNZGtRgLpvfFo45R2wSnm");
 
     private final String value;
 
