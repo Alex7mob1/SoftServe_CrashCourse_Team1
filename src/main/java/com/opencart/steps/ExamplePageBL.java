@@ -11,7 +11,7 @@ public class ExamplePageBL {
     }
 
     public void verifyResult() {
-        String expectedMessage = "£14,448.00";
+        String expectedMessage = "£14,544.00";
         Assert.assertEquals(examplePage.getActualResult().getText(),expectedMessage,"Incorrect result");
     }
     public void wrongResult() {

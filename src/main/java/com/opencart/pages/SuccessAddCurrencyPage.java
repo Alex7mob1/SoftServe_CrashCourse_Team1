@@ -13,5 +13,4 @@ public class SuccessAddCurrencyPage extends BasePage{
         wait.until(ExpectedConditions.visibilityOf(successModifyTitle));
         return successModifyTitle;
     }
-
 }

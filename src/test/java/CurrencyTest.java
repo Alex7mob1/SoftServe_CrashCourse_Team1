@@ -100,8 +100,27 @@ public class CurrencyTest extends BaseTest {
         TaxPageBL taxPageBL = new TaxPageBL();
         taxPageBL
                 .clickOnAddTaxButton()
-                .addNewTax();
+                .addNewTax()
+                .verifyAdding();
+    }
 
+    @Test
+    public void EnableTaxTest(){
+        new Navigation().navigateToUrl(TAX_CLASSES_URL.getValue());
+        AdminLoginPageBL adminLoginPageBL = new AdminLoginPageBL();
+        adminLoginPageBL
+                .adminLogin();
+        TaxClassesPageBL taxClassesPageBL = new TaxClassesPageBL();
+        taxClassesPageBL.clickOnEditTaxButton()
+                .testTaxEnable()
+                .verifyEnabling();
+    }
 
+    @Test
+    public void checkTaxEnablingOnOpencart(){
+        new Navigation().navigateToUrl(BASE_URL.getValue());
+        MainPageBL mainPageBL = new MainPageBL();
+        mainPageBL
+                .checkTaxEnablingOnOpencart();
     }
 }

@@ -2,10 +2,14 @@ package com.opencart.steps;
 
 import com.opencart.datamodel.AddTaxModel;
 import com.opencart.pages.AddTaxPage;
+import com.opencart.pages.SuccessAddTaxPage;
 import com.opencart.repository.AddTaxModelRepository;
+import org.testng.Assert;
 
 public class AddTaxPageBL {
+
     private AddTaxPage addTaxPage;
+    private SuccessAddTaxPage successAddTaxPage;
 
     public AddTaxPageBL(){addTaxPage = new AddTaxPage();}
 
@@ -19,6 +23,8 @@ public class AddTaxPageBL {
         clickOnTypeButton();
         clickOnFixedButton();
         clickOnSubmitButton();
+
+        successAddTaxPage = new SuccessAddTaxPage();
 
         return this;
     }
@@ -37,4 +43,8 @@ public class AddTaxPageBL {
     private void clickOnFixedButton(){addTaxPage.getFixedButton().click();}
     private void clickOnSubmitButton(){addTaxPage.getSubmitButton().click();}
 
+    public void verifyAdding() {
+        String expectedMessage = "×";
+        Assert.assertEquals(successAddTaxPage.getSuccessMark().getText(), expectedMessage, "Incorrect page title");
+    }
 }
