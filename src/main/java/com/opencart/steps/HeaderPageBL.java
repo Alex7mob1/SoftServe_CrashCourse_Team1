@@ -1,8 +1,6 @@
 package com.opencart.steps;
 
 import com.opencart.pages.HeaderPage;
-import com.opencart.pages.MyAccountPage;
-import org.openqa.selenium.WebElement;
 
 public class HeaderPageBL {
 
@@ -22,9 +20,15 @@ public class HeaderPageBL {
         headerPage.getRegisterButton().click();
         return new RegisterPageBL();
     }
-    public LoginPageBL clickOnLoginPageButton() {
-        headerPage.getLoginPageButton().click();
-        return new LoginPageBL();}
+
+    public LoginPageBL clickOnLoginButton() {
+        headerPage.getLoginButton().click();
+        return new LoginPageBL();
+    }
+
+    public void clickOnLogoutButton() {
+        headerPage.getLogoutButton().click();
+    }
 }
 
 

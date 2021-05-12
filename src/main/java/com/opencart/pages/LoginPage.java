@@ -3,7 +3,7 @@ package com.opencart.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class LoginPage extends BasePage{
+public class LoginPage extends BasePage {
     @FindBy(id = "input-email")
     private WebElement emailInput;
 
@@ -11,9 +11,9 @@ public class LoginPage extends BasePage{
     private WebElement passwordInput;
 
     @FindBy(xpath = ".//*[@type = 'submit' and @value='Login']")
-    private WebElement loginButton;
+    private WebElement confirmButton;
 
-    public WebElement getEmailInput()  {
+    public WebElement getEmailInput() {
         return emailInput;
     }
 
@@ -21,9 +21,8 @@ public class LoginPage extends BasePage{
         return passwordInput;
     }
 
-    public WebElement getLoginButton() throws InterruptedException {
-        Thread.sleep(5000);
-        return loginButton;
+    public WebElement getConfirmButton() {
+        return confirmButton;
     }
 
 }

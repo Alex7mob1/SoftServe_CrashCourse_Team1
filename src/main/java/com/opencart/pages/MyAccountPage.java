@@ -7,8 +7,7 @@ public class MyAccountPage extends HeaderPage {
     @FindBy(xpath = ".//*[contains(@href, 'edit')]")
     private WebElement editAccountButton;
 
-    public WebElement getEditAccountButton() throws InterruptedException {
-        Thread.sleep(5000);
+    public WebElement getEditAccountButton() {
         return editAccountButton;
     }
 
@@ -18,15 +17,15 @@ public class MyAccountPage extends HeaderPage {
     public WebElement getSuccessMessage() {
         return successMessage;
     }
+
     @FindBy(xpath = ".//*[contains(@href, 'account')]")
     private WebElement accountTab;
 
-    public WebElement getAccountTab() throws InterruptedException {
-        Thread.sleep(5000);
+    public WebElement getAccountTab() {
         return accountTab;
     }
 
 
-    }
+}
 
 

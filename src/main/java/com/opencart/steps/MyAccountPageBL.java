@@ -9,7 +9,8 @@ public class MyAccountPageBL {
 
         myAccountPage = new MyAccountPage();
     }
-    public EditAccountPageBL clickOnEditAccountButton() throws InterruptedException {
+
+    public EditAccountPageBL clickOnEditAccountButton() {
         myAccountPage.getEditAccountButton().click();
         return new EditAccountPageBL();
     }

@@ -1,4 +1,5 @@
 package com.opencart.datamodel;
+
 import lombok.Getter;
 
 @Getter
@@ -12,32 +13,37 @@ public class RegisterModel {
     RegisterModel() {
     }
 
-        public static Builder getBuilder() {
-            return new RegisterModel().new Builder();
-        }
+    public static Builder getBuilder() {
+        return new RegisterModel().new Builder();
+    }
 
     public class Builder {
-        public Builder firstName(String value){
+        public Builder firstName(String value) {
             firstName = value;
             return this;
         }
-        public Builder lastName(String value){
+
+        public Builder lastName(String value) {
             lastName = value;
             return this;
         }
-        public Builder email(String value){
+
+        public Builder email(String value) {
             email = value;
             return this;
         }
-        public Builder telephone(String value){
+
+        public Builder telephone(String value) {
             telephone = value;
             return this;
         }
-        public Builder password(String value){
+
+        public Builder password(String value) {
             password = value;
             return this;
         }
-        public RegisterModel build(){
+
+        public RegisterModel build() {
             return RegisterModel.this;
         }
     }

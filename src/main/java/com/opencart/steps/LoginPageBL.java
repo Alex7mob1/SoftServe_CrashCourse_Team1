@@ -1,9 +1,8 @@
 package com.opencart.steps;
 
-import com.opencart.datamodel.LoginModel;
+
 import com.opencart.pages.LoginPage;
 import com.opencart.pages.MyAccountPage;
-import com.opencart.repository.LoginModelRepository;
 
 public class LoginPageBL {
     private LoginPage loginPage;
@@ -13,10 +12,9 @@ public class LoginPageBL {
         loginPage = new LoginPage();
     }
 
-    public LoginPageBL loginPerson() {
-        LoginModel loginModel = LoginModelRepository.getLoginModel();
-        inputEmail(loginModel.getEmail());
-        inputPassword(loginModel.getPassword());
+    public LoginPageBL loginPerson(String email, String password) {
+        inputEmail(email);
+        inputPassword(password);
 
         myAccountPage = new MyAccountPage();
         return this;
@@ -33,8 +31,8 @@ public class LoginPageBL {
         loginPage.getPasswordInput().sendKeys(password);
     }
 
-    public MyAccountPageBL clickOnLoginButton() throws InterruptedException {
-        loginPage.getLoginButton().click();
+    public MyAccountPageBL clickOnConfirmButton() {
+        loginPage.getConfirmButton().click();
         return new MyAccountPageBL();
     }
 

@@ -13,7 +13,11 @@ public class HeaderPage extends BasePage {
     private WebElement registerButton;
 
     @FindBy(xpath = ".//*[contains(@href, 'login')]")
-    private WebElement loginPageButton;
+    private WebElement loginButton;
+
+    @FindBy(xpath = ".//*[contains(@href, 'logout')]")
+    private WebElement logoutButton;
+
 
     public HeaderPage() {
     }
@@ -27,8 +31,12 @@ public class HeaderPage extends BasePage {
         return registerButton;
     }
 
-    public WebElement getLoginPageButton() {
-        return loginPageButton;
+    public WebElement getLoginButton() {
+        return loginButton;
+    }
+
+    public WebElement getLogoutButton() {
+        return logoutButton;
     }
 
 }
