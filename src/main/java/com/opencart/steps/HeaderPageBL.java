@@ -1,14 +1,13 @@
 package com.opencart.steps;
 
-import com.opencart.pages.HeaderPage;
+import com.opencart.pages.panels.HeaderPanel;
 
 public class HeaderPageBL {
 
-    private HeaderPage headerPage;
+    private HeaderPanel headerPage;
 
     public HeaderPageBL() {
-
-        headerPage = new HeaderPage();
+        headerPage = new HeaderPanel();
     }
 
     public HeaderPageBL clickOnMyAccountButton() {
@@ -21,6 +20,20 @@ public class HeaderPageBL {
         return new RegisterPageBL();
     }
 
+    public HeaderPageBL clickOnCurrencyButton() {
+        headerPage.getCurrencyButton().click();
+        return this;
+    }
+
+    public HeaderPageBL clickOnPoundCurrencyButton() {
+        headerPage.getPoundCurrencyButton().click();
+        return this;
+    }
+
+    public ExamplePageBL clickOnExamplePage(){
+        headerPage.getTestProductButton().click();
+        return new ExamplePageBL();
+    }
     public LoginPageBL clickOnLoginButton() {
         headerPage.getLoginButton().click();
         return new LoginPageBL();
@@ -30,8 +43,3 @@ public class HeaderPageBL {
         headerPage.getLogoutButton().click();
     }
 }
-
-
-
-
-
