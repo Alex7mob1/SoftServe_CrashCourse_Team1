@@ -4,10 +4,10 @@ import com.opencart.datamodel.RegisterModel;
 import com.opencart.pages.RegisterPage;
 import com.opencart.pages.SuccessRegisterPage;
 import com.opencart.repository.RegisterModelRepository;
+import com.opencart.util.DriverUtils;
 import org.testng.Assert;
 
 public class RegisterPageBL {
-
     private RegisterPage registerPage;
     private SuccessRegisterPage successRegisterPage;
 
@@ -16,9 +16,7 @@ public class RegisterPageBL {
     }
 
     public RegisterPageBL registerNewPerson() {
-
         RegisterModel registerModel = RegisterModelRepository.getRegisterModel();
-
         inputFirstName(registerModel.getFirstName());
         inputLastName(registerModel.getLastName());
         inputEmail(registerModel.getEmail());
@@ -29,7 +27,6 @@ public class RegisterPageBL {
         clickOnContinueButton();
 
         successRegisterPage = new SuccessRegisterPage();
-
         return this;
     }
 
@@ -61,7 +58,7 @@ public class RegisterPageBL {
     }
 
     private void clickPolicyCheckbox() {
-        registerPage.getPolicy().click();
+        new DriverUtils().clickOnElementsJS(registerPage.getPolicy());
     }
 
     public void clickOnContinueButton() {

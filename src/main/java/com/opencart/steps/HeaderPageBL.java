@@ -34,4 +34,12 @@ public class HeaderPageBL {
         headerPage.getTestProductButton().click();
         return new ExamplePageBL();
     }
+    public LoginPageBL clickOnLoginButton() {
+        headerPage.getLoginButton().click();
+        return new LoginPageBL();
+    }
+
+    public void clickOnLogoutButton() {
+        headerPage.getLogoutButton().click();
+    }
 }

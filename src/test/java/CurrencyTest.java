@@ -10,7 +10,7 @@ public class CurrencyTest extends BaseTest {
     public void correctCurrencyWithExampleProduct() {
         new Navigation().navigateToUrl(BASE_URL.getValue());
         MainPageBL mainPageBL = new MainPageBL();
-        ExamplePageBL examplePageBL = mainPageBL.getHeaderPageBL()
+        ExamplePageBL examplePageBL = mainPageBL.getHeaderPanelBL()
                 .clickOnCurrencyButton()
                 .clickOnPoundCurrencyButton()
                 .clickOnExamplePage();
@@ -21,7 +21,7 @@ public class CurrencyTest extends BaseTest {
     public void incorrectCurrencyWithExampleProduct() {
         new Navigation().navigateToUrl(BASE_URL.getValue());
         MainPageBL mainPageBL = new MainPageBL();
-        mainPageBL.getHeaderPageBL()
+        mainPageBL.getHeaderPanelBL()
                 .clickOnCurrencyButton()
                 .clickOnPoundCurrencyButton()
                 .clickOnExamplePage()

@@ -4,7 +4,6 @@ import lombok.Getter;
 
 @Getter
 public class RegisterModel {
-
     private String firstName;
     private String lastName;
     private String email;
@@ -12,37 +11,34 @@ public class RegisterModel {
     private String password;
 
     RegisterModel() {
-
     }
 
-    public static RegisterModel.Builder getBuilder() {
+    public static Builder getBuilder() {
         return new RegisterModel().new Builder();
     }
 
-
     public class Builder {
-
-        public RegisterModel.Builder firstName(String value) {
+        public Builder firstName(String value) {
             firstName = value;
             return this;
         }
 
-        public RegisterModel.Builder lastName(String value) {
+        public Builder lastName(String value) {
             lastName = value;
             return this;
         }
 
-        public RegisterModel.Builder email(String value) {
+        public Builder email(String value) {
             email = value;
             return this;
         }
 
-        public RegisterModel.Builder telephone(String value) {
+        public Builder telephone(String value) {
             telephone = value;
             return this;
         }
 
-        public RegisterModel.Builder password(String value) {
+        public Builder password(String value) {
             password = value;
             return this;
         }
@@ -52,3 +48,7 @@ public class RegisterModel {
         }
     }
 }
+
+
+
+

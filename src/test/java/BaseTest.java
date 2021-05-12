@@ -4,10 +4,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 
 public class BaseTest {
-
     @BeforeSuite
     public void setup() {
-        DriverRepository.downloadWebDriver();
+        DriverRepository.downLoadWebDriver();
     }
 
     @BeforeClass

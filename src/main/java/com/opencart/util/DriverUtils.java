@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class DriverUtils {
-
     private WebDriver driver;
 
     public DriverUtils() {
@@ -14,10 +13,11 @@ public class DriverUtils {
     }
 
     public void clickOnElementsJS(WebElement webElement) {
-        getJSExecutor().executeScript("argument[0].click();", webElement);
+        getJSExecutor().executeScript("arguments[0].click();", webElement);
     }
 
-    private JavascriptExecutor getJSExecutor() {
+    public JavascriptExecutor getJSExecutor() {
         return (JavascriptExecutor) driver;
     }
+
 }

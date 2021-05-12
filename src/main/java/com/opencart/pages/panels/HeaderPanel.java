@@ -25,6 +25,12 @@ public class HeaderPanel extends BasePage {
     @FindBy(xpath = ".//*[@title='MacBook']")
     private WebElement testProductButton;
 
+    @FindBy(xpath = ".//*[contains(@href, 'login')]")
+    private WebElement loginButton;
+
+    @FindBy(xpath = ".//*[contains(@href, 'logout')]")
+    private WebElement logoutButton;
+
     public WebElement getTestProductButton() {
         wait.until(ExpectedConditions.visibilityOf(testProductButton));
         return testProductButton;
@@ -51,4 +57,12 @@ public class HeaderPanel extends BasePage {
     public WebElement getShoppingCartButton() {
         return shoppingCartButton;
     }
+    public WebElement getLoginButton() {
+        return loginButton;
+    }
+
+    public WebElement getLogoutButton() {
+        return logoutButton;
+    }
+
 }

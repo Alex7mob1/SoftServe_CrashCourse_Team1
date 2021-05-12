@@ -4,7 +4,6 @@ import com.opencart.driver.DriverRepository;
 import org.openqa.selenium.WebDriver;
 
 public class Navigation {
-
     private WebDriver driver;
 
     public Navigation() {

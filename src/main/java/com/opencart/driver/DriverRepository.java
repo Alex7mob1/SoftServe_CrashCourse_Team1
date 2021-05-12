@@ -7,14 +7,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.concurrent.TimeUnit;
 
 public class DriverRepository {
-
     public static final ThreadLocal<WebDriver> DRIVERS = new ThreadLocal<>();
+
     private static WebDriver webDriver;
 
     public DriverRepository() {
     }
 
-    public static void downloadWebDriver() {
+    public static void downLoadWebDriver() {
         WebDriverManager.chromedriver().setup();
     }
 
@@ -25,9 +25,5 @@ public class DriverRepository {
 
     public static void closeBrowser() {
         webDriver.quit();
-    }
-
-    public static WebDriver getWebDriver() {
-        return webDriver;
     }
 }
