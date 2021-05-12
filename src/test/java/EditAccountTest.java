@@ -12,7 +12,7 @@ public class EditAccountTest extends BaseTest {
     public void checkLoginOfEditAccountPage(String email, String password) {
         new Navigation().navigateToUrl(BASE_URL.getValue());
         MainPageBL mainPageBL = new MainPageBL();
-        EditAccountPageBL editAccountPageBL = mainPageBL.getHeaderPageBL()
+        EditAccountPageBL editAccountPageBL = mainPageBL.getHeaderPanelBL()
                 .clickOnMyAccountButton()
                 .clickOnLoginButton()
                 .loginPerson(email, password)
@@ -24,7 +24,7 @@ public class EditAccountTest extends BaseTest {
     public void after() {
         new Navigation().navigateToUrl(BASE_URL.getValue());
         MainPageBL mainPageBL = new MainPageBL();
-        mainPageBL.getHeaderPageBL()
+        mainPageBL.getHeaderPanelBL()
                 .clickOnMyAccountButton()
                 .clickOnLogoutButton();
     }

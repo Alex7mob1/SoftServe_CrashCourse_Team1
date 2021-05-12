@@ -1,9 +1,10 @@
 package com.opencart.pages;
 
+import com.opencart.pages.panels.HeaderPanel;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class MyAccountPage extends HeaderPage {
+public class MyAccountPage extends HeaderPanel {
     @FindBy(xpath = ".//*[contains(@href, 'edit')]")
     private WebElement editAccountButton;
 

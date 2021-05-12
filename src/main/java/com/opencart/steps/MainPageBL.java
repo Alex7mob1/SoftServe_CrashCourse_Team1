@@ -5,9 +5,6 @@ import com.opencart.pages.MainPage;
 public class MainPageBL {
     private MainPage mainPage;
 
-    public HeaderPageBL getHeaderPageBL() {
-        return new HeaderPageBL();
-    }
 
     public MainPageBL() {
         mainPage = new MainPage();
