@@ -21,11 +21,11 @@ public class CurrencyTest extends BaseTest {
     public void incorrectCurrencyWithExampleProduct() {
         new Navigation().navigateToUrl(BASE_URL.getValue());
         MainPageBL mainPageBL = new MainPageBL();
-        ExamplePageBL examplePageBL = mainPageBL.getHeaderPageBL()
+        mainPageBL.getHeaderPageBL()
                 .clickOnCurrencyButton()
                 .clickOnPoundCurrencyButton()
-                .clickOnExamplePage();
-        examplePageBL.wrongResult();
+                .clickOnExamplePage()
+                .verifyResult();
     }
 
     @Test
@@ -34,9 +34,6 @@ public class CurrencyTest extends BaseTest {
         AdminLoginPageBL adminLoginPageBL = new AdminLoginPageBL();
         adminLoginPageBL
                 .adminLogin();
-        CurrencyPageBL currencyPageBL = new CurrencyPageBL();
-        currencyPageBL.clickOnAddNewCurrencyButton();
-
     }
 
     @Test
@@ -66,7 +63,7 @@ public class CurrencyTest extends BaseTest {
     }
 
     @Test
-    public void EditCurrencyTest() {
+    public void editCurrencyTest() {
         new Navigation().navigateToUrl(ADMIN_CURRENCY_URL.getValue());
         AdminLoginPageBL adminLoginPageBL = new AdminLoginPageBL();
         adminLoginPageBL
@@ -79,7 +76,7 @@ public class CurrencyTest extends BaseTest {
     }
 
     @Test
-    public void InccorectExpectedMessageEditCurrencyTest() {
+    public void inccorectExpectedMessageEditCurrencyTest() {
         new Navigation().navigateToUrl(ADMIN_CURRENCY_URL.getValue());
         AdminLoginPageBL adminLoginPageBL = new AdminLoginPageBL();
         adminLoginPageBL
@@ -92,7 +89,7 @@ public class CurrencyTest extends BaseTest {
     }
 
     @Test
-    public void AddNewTaxTest() {
+    public void addNewTaxTest() {
         new Navigation().navigateToUrl(TAX_RATES_URL.getValue());
         AdminLoginPageBL adminLoginPageBL = new AdminLoginPageBL();
         adminLoginPageBL
@@ -105,7 +102,7 @@ public class CurrencyTest extends BaseTest {
     }
 
     @Test
-    public void EnableTaxTest(){
+    public void enableTaxTest(){
         new Navigation().navigateToUrl(TAX_CLASSES_URL.getValue());
         AdminLoginPageBL adminLoginPageBL = new AdminLoginPageBL();
         adminLoginPageBL

@@ -27,6 +27,7 @@ public class AddCurrencyPageBL {
         clickOnSaveButton();
 
         successAddCurrencyPage = new SuccessAddCurrencyPage();
+
         return this;
     }
 

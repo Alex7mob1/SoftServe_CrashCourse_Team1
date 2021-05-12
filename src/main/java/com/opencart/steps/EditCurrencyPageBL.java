@@ -22,6 +22,7 @@ public class EditCurrencyPageBL {
 
         clickSave();
         successEditPage = new SuccessEditPage();
+
         return this;
 
     }
