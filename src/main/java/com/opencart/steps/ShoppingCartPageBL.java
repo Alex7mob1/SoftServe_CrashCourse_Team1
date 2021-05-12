@@ -1,12 +1,14 @@
 package com.opencart.steps;
 
 import com.opencart.pages.ShoppingCartPage;
+import com.opencart.pages.containers.ShoppingCartProductContainer;
 import org.hamcrest.CoreMatchers;
+import org.openqa.selenium.StaleElementReferenceException;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.testng.Assert.assertTrue;
 
 public class ShoppingCartPageBL {
-
     private ShoppingCartPage shoppingCartPage;
 
     public ShoppingCartPageBL() {
@@ -14,16 +16,12 @@ public class ShoppingCartPageBL {
     }
 
     public ShoppingCartPageBL editQuantityProducts(int quantity) {
-
         inputEditQuantity(quantity);
-
         clickOnUpdateButton();
-
         return this;
     }
 
     public void inputEditQuantity(int editQuantity) {
-
         shoppingCartPage.getEditQuantityProducts().clear();
         shoppingCartPage.getEditQuantityProducts().sendKeys(String.valueOf(editQuantity));
 
@@ -40,21 +38,27 @@ public class ShoppingCartPageBL {
 
     public ShoppingCartPageBL clickOnRemoveWithFewProductsButton() {
         shoppingCartPage.getRemoveButton().click();
-
         return this;
     }
 
-    public String verifyPrice(String productName){
-            return shoppingCartPage.getShoppingCartProducts().getTotalPrice(productName).getText();
+    public String verifyPrice(String productName) {
+        ShoppingCartProductContainer shoppingCartProductContainer = shoppingCartPage.getShoppingCartProducts()
+                .stream()
+                .filter(e -> e.getProductName().getText().equals(productName))
+                .findFirst()
+                .get();
+
+        return shoppingCartProductContainer.getTotalPrice().getText();
     }
 
-    public HomePageBL clickOnContinueShoppingButton(){
+    public HomePageBL clickOnContinueShoppingButton() {
         shoppingCartPage.getContinueShoppingButton().click();
         return new HomePageBL();
     }
 
-    public void clickOnCheckoutButton() {
+    public CheckoutPageBL clickOnCheckoutButton() {
         shoppingCartPage.getCheckoutButton().click();
+        return new CheckoutPageBL();
     }
 
     public void verifyEditQuantity() {
@@ -64,6 +68,10 @@ public class ShoppingCartPageBL {
 
     public void verifyShoppingCartLocation() {
         String expectedMassage = "Shopping Cart";
-        assertThat(shoppingCartPage.getVerifyShoppingCartLocation().getText(),CoreMatchers.startsWith(expectedMassage));
+        try {
+            assertTrue(shoppingCartPage.getVerifyShoppingCartLocation().getText().contains(expectedMassage));
+        }catch (StaleElementReferenceException e){
+            assertTrue(shoppingCartPage.getVerifyShoppingCartLocation().getText().contains(expectedMassage));
+        }
     }
 }

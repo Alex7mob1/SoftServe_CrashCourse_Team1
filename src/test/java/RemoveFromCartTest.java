@@ -24,7 +24,7 @@ public class RemoveFromCartTest extends BaseTest {
                 .clickOnDesktopsMenuButton()
                 .clickOnMacMenuButton()
                 .clickOnIMacIcon()
-                .setQuantity(quantity);
+                .setQuantityAddToCart(quantity);
     }
 
     @Test
@@ -45,11 +45,29 @@ public class RemoveFromCartTest extends BaseTest {
                 .clickOnComponentsMenuButton()
                 .clickOnMonitorsMenuButton()
                 .clickOnSamsungSyncMasterIcon()
-                .setQuantity(quantity);
+                .setQuantityAddToCart(quantity);
         mainPageBL.getHeaderPanelBL()
                 .clickOnShoppingCartButton()
                 .clickOnRemoveWithFewProductsButton()
                 .verifyShoppingCartLocation();
+    }
+
+    @Test
+    public void testContinueShopping(){
+
+        mainPageBL.getHeaderPanelBL()
+                .clickOnShoppingCartButton()
+                .clickOnContinueShoppingButton()
+                .verifyHomePageLocation();
+    }
+
+    @Test
+    public void testCheckOutButton(){
+
+        mainPageBL.getHeaderPanelBL()
+                .clickOnShoppingCartButton()
+                .clickOnCheckoutButton()
+                .verifyCheckoutPageLocation();
     }
 }
 

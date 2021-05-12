@@ -6,11 +6,17 @@ import org.openqa.selenium.WebElement;
 
 public class ShoppingCartProductContainer extends BasePage {
 
-    public ShoppingCartProductContainer() {
+    private WebElement element;
+
+    public ShoppingCartProductContainer(WebElement element) {
+        this.element = element;
     }
 
-    public WebElement getTotalPrice(String productName) {
-        return driver.findElement(By.xpath(String.format("//*[@class='table table-bordered']//*[text()='%s']/ancestor::tr//*[@class='text-right'][last()]", productName)));
+    public WebElement getTotalPrice() {
+        return element.findElement(By.xpath(".//*[@class='text-right'][last()]"));
     }
 
+    public WebElement getProductName() {
+        return element.findElement(By.xpath(".//*[@class= 'text-left']//*[contains(@href,'product')]"));
+    }
 }

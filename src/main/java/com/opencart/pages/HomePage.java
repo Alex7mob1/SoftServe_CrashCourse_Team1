@@ -5,11 +5,10 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage {
 
-    @FindBy(xpath = "//*[@class='swiper-slide text-center swiper-slide-duplicate swiper-slide-active']")
-    private WebElement verifyHomePage;
+    @FindBy(xpath = "//*[text()='Featured']")
+    private WebElement verifyHomePageLocation;
 
-    public WebElement getVerifyHomePage() {
-        return verifyHomePage;
+    public WebElement getVerifyHomePageLocation() {
+        return verifyHomePageLocation;
     }
-
 }

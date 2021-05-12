@@ -20,7 +20,6 @@ public class DriverRepository {
 
     public static void instanceWebBrowser() {
         webDriver = new ChromeDriver();
-        webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         DRIVERS.set(webDriver);
     }
 

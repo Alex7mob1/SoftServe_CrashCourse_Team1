@@ -32,14 +32,13 @@ public class AddToCartTest extends BaseTest {
                 .clickOnDesktopsMenuButton()
                 .clickOnMacMenuButton()
                 .clickOnIMacIcon()
-                .setQuantity(expectedQuantity)
+                .setQuantityAddToCart(expectedQuantity)
                 .verifyAddToCart(expectedProduct);
         mainPageBL.getHeaderPanelBL()
                 .clickOnShoppingCartButton()
                 .editQuantityProducts(expectedUpdateQuantity)
                 .verifyEditQuantity();
     }
-
 
     @Test
     public void testAddSamsungSyncMasterToCart() {
@@ -52,7 +51,7 @@ public class AddToCartTest extends BaseTest {
                 .clickOnComponentsMenuButton()
                 .clickOnMonitorsMenuButton()
                 .clickOnSamsungSyncMasterIcon()
-                .setQuantity(expectedQuantity)
+                .setQuantityAddToCart(expectedQuantity)
                 .verifyAddToCart(expectedProduct);
         mainPageBL.getHeaderPanelBL()
                 .clickOnShoppingCartButton()
@@ -61,37 +60,38 @@ public class AddToCartTest extends BaseTest {
     }
 
     @Test
-    public void testAddTwoProductsToCart(){
+    public void testAddProductsInSearchBox() {
 
-        int quantity=2;
-        String productName= "iMac";
+        String productName = "HP LP3065";
+        int quantity = 3;
+
+        mainPageBL.getSearchPanelBL()
+                .searchProduct(productName)
+                .clickOnIconInSearchPage()
+                .setQuantityAddToCart(quantity)
+                .verifyAddToCart(productName);
+    }
+
+    @Test
+    public void testAddTwoProductsToCartVerifyPrice() {
+
+        int quantity = 2;
+        String productName1 = "iMac";
+        String productName2="Samsung SyncMaster 941BW";
 
         mainPageBL.getMenuPanelBL()
                 .clickOnDesktopsMenuButton()
                 .clickOnMacMenuButton()
                 .clickOnIMacIcon()
-                .setQuantity(quantity)
-                .clickOnAddToCartButton();
+                .setQuantityAddToCart(quantity);
         mainPageBL.getMenuPanelBL()
                 .clickOnComponentsMenuButton()
                 .clickOnMonitorsMenuButton()
                 .clickOnSamsungSyncMasterIcon()
-                .setQuantity(quantity)
-                .clickOnAddToCartButton();
+                .setQuantityAddToCart(quantity);
         ShoppingCartPageBL shoppingCartPageBL = mainPageBL.getHeaderPanelBL()
                 .clickOnShoppingCartButton();
-        System.out.println(shoppingCartPageBL.verifyPrice(productName));
-        shoppingCartPageBL.clickOnRemoveWithFewProductsButton()
-                .verifyShoppingCartLocation();
-
+        System.out.println("Total iMac = "+shoppingCartPageBL.verifyPrice(productName1));
+        System.out.println("Total Samsung = "+shoppingCartPageBL.verifyPrice(productName2));
     }
-
-
-
-
-
-    //TODO
-    // @Test
-    // public void testAddMacToCartAndCheckout()
-
 }

@@ -5,7 +5,12 @@ public class MainPageBL {
     public HeaderPanelBL getHeaderPanelBL() {
         return new HeaderPanelBL();
     }
-    public MenuPanelBL getMenuPanelBL(){
+
+    public MenuPanelBL getMenuPanelBL() {
         return new MenuPanelBL();
+    }
+
+    public SearchPanelBL getSearchPanelBL() {
+        return new SearchPanelBL();
     }
 }

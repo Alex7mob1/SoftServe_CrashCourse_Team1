@@ -13,12 +13,10 @@ public class ReviewProductPageBL {
         reviewProductPage = new ReviewProductPage();
     }
 
-    public ReviewProductPageBL setQuantity(int quantity) {
+    public ReviewProductPageBL setQuantityAddToCart(int quantity) {
 
         inputQuantity(quantity);
-
         clickOnAddToCartButton();
-
         return this;
     }
 
@@ -34,6 +32,5 @@ public class ReviewProductPageBL {
     public void verifyAddToCart(String product) {
         String expectedMessage = "Success: You have added " + product + " to your shopping cart!";
         assertThat(reviewProductPage.getSuccessAddToCartTextField().getText(), CoreMatchers.startsWith(expectedMessage));
-
     }
 }

@@ -1,12 +1,12 @@
 package com.opencart.pages;
 
 import com.opencart.pages.containers.ShoppingCartProductContainer;
-import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 
-import java.util.concurrent.TimeUnit;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class ShoppingCartPage extends BasePage {
 
@@ -25,11 +25,11 @@ public class ShoppingCartPage extends BasePage {
     @FindBy(xpath = "//*[@class='buttons clearfix']//*[contains(@href, 'checkout')]")
     private WebElement checkoutButton;
 
-    @FindBy(xpath = "//*[@class='breadcrumb']//*[text()='Shopping Cart']")
-    private WebElement verifyShoppingCartLocation;
-
     @FindBy(xpath = "//*[@class='pull-left']//*[text()='Continue Shopping']")
     private WebElement continueShoppingButton;
+
+    @FindBy(xpath = "//*[@class='table-responsive']//tbody/tr")
+    private List<WebElement> shoppingCartProductList;
 
     public WebElement getEditQuantityProducts() {
         return editQuantityProducts;
@@ -52,19 +52,16 @@ public class ShoppingCartPage extends BasePage {
     }
 
     public WebElement getVerifyShoppingCartLocation() {
-        wait.until((ExpectedCondition<Boolean>) wdriver -> ((JavascriptExecutor) driver).executeScript(
-                "return document.readyState"
-        ).equals("complete"));
-
-        wait.pollingEvery(1, TimeUnit.SECONDS).until((ExpectedCondition<Object>) webDriver -> verifyShoppingCartLocation.isDisplayed());
-        return verifyShoppingCartLocation;
+        return driver.findElement(By.xpath("//*[@class='breadcrumb']//*[text()='Shopping Cart']"));
     }
 
     public WebElement getContinueShoppingButton() {
         return continueShoppingButton;
     }
 
-    public ShoppingCartProductContainer getShoppingCartProducts() {
-        return new ShoppingCartProductContainer();
+    public List<ShoppingCartProductContainer> getShoppingCartProducts() {
+        return shoppingCartProductList.stream()
+                .map(ShoppingCartProductContainer::new)
+                .collect(Collectors.toList());
     }
 }

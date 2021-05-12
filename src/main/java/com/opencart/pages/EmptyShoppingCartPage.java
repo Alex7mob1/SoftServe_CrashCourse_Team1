@@ -24,5 +24,4 @@ public class EmptyShoppingCartPage extends BasePage {
     public WebElement getVerifyEmptyBlackWindow() {
         return verifyEmptyBlackWindow;
     }
-
 }
