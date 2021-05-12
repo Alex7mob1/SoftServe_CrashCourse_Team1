@@ -1,16 +1,20 @@
-package com.opencart.pages;
+package com.opencart.pages.panels;
 
+import com.opencart.pages.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class HeaderPage extends BasePage {
+public class HeaderPanel extends BasePage {
 
     @FindBy(xpath = ".//*[@title='My Account']")
     private WebElement myAccountButton;
 
     @FindBy(xpath = ".//*[contains(@href, 'register')]")
     private WebElement registerButton;
+
+    @FindBy(xpath = "//*[@title='Shopping Cart']")
+    private WebElement shoppingCartButton;
 
     @FindBy(xpath = "//*[@class='btn btn-link dropdown-toggle']")
     private WebElement currencyButton;
@@ -26,15 +30,6 @@ public class HeaderPage extends BasePage {
         return testProductButton;
     }
 
-    public WebElement getMyAccountButton() {
-        wait.until(ExpectedConditions.visibilityOf(myAccountButton));
-        return myAccountButton;
-    }
-
-    public WebElement getRegisterButton() {
-        return registerButton;
-    }
-
     public WebElement getCurrencyButton() {
         wait.until(ExpectedConditions.visibilityOf(currencyButton));
         return currencyButton;
@@ -44,4 +39,16 @@ public class HeaderPage extends BasePage {
         return poundCurrencyButton;
     }
 
+    public WebElement getMyAccountButton() {
+        wait.until(ExpectedConditions.visibilityOf(myAccountButton));
+        return myAccountButton;
+    }
+
+    public WebElement getRegisterButton() {
+        return registerButton;
+    }
+
+    public WebElement getShoppingCartButton() {
+        return shoppingCartButton;
+    }
 }
